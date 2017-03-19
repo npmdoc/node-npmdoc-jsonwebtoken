@@ -1,0 +1,785 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api-documentation for
+    <a
+        
+        href="https://github.com/auth0/node-jsonwebtoken#readme"
+        
+    >jsonwebtoken (v7.3.0)</a>
+</h1>
+<h4>JSON Web Token implementation (symmetric and asymmetric)</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken">module jsonwebtoken</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.JsonWebTokenError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>JsonWebTokenError
+            <span class="apidocSignatureSpan">(message, error)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.NotBeforeError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>NotBeforeError
+            <span class="apidocSignatureSpan">(message, date)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.TokenExpiredError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>TokenExpiredError
+            <span class="apidocSignatureSpan">(message, expiredAt)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.decode">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>decode
+            <span class="apidocSignatureSpan">(jwt, options)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.sign">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>sign
+            <span class="apidocSignatureSpan">(payload, secretOrPrivateKey, options, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.verify">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>verify
+            <span class="apidocSignatureSpan">(jwtString, secretOrPublicKey, options, callback)</span>
+            </a>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jsonwebtoken.</span>JsonWebTokenError.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jsonwebtoken.</span>NotBeforeError.prototype</span>
+            
+        </li>
+        
+        <li>
+            
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">jsonwebtoken.</span>TokenExpiredError.prototype</span>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.JsonWebTokenError">module jsonwebtoken.JsonWebTokenError</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.JsonWebTokenError.JsonWebTokenError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>JsonWebTokenError
+            <span class="apidocSignatureSpan">(message, error)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.JsonWebTokenError.prototype">module jsonwebtoken.JsonWebTokenError.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.JsonWebTokenError.prototype.constructor">
+            function <span class="apidocSignatureSpan">jsonwebtoken.JsonWebTokenError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, error)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.NotBeforeError">module jsonwebtoken.NotBeforeError</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.NotBeforeError.NotBeforeError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>NotBeforeError
+            <span class="apidocSignatureSpan">(message, date)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.NotBeforeError.prototype">module jsonwebtoken.NotBeforeError.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.NotBeforeError.prototype.constructor">
+            function <span class="apidocSignatureSpan">jsonwebtoken.NotBeforeError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, date)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.TokenExpiredError">module jsonwebtoken.TokenExpiredError</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.TokenExpiredError.TokenExpiredError">
+            function <span class="apidocSignatureSpan">jsonwebtoken.</span>TokenExpiredError
+            <span class="apidocSignatureSpan">(message, expiredAt)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+    <li class="apidocModuleLi"><a href="#apidoc.module.jsonwebtoken.TokenExpiredError.prototype">module jsonwebtoken.TokenExpiredError.prototype</a><ol>
+        
+        <li>
+            
+            <a class="apidocElementLiA" href="#apidoc.element.jsonwebtoken.TokenExpiredError.prototype.constructor">
+            function <span class="apidocSignatureSpan">jsonwebtoken.TokenExpiredError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message, expiredAt)</span>
+            </a>
+            
+        </li>
+        
+    </ol></li>
+    
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken" id="apidoc.module.jsonwebtoken">module jsonwebtoken</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.JsonWebTokenError" id="apidoc.element.jsonwebtoken.JsonWebTokenError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>JsonWebTokenError
+        <span class="apidocSignatureSpan">(message, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JsonWebTokenError = function (message, error) {
+  Error.call(this, message);
+  Error.captureStackTrace(this, this.constructor);
+  this.name = &#x27;JsonWebTokenError&#x27;;
+  this.message = message;
+  if (error) this.inner = error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.NotBeforeError" id="apidoc.element.jsonwebtoken.NotBeforeError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>NotBeforeError
+        <span class="apidocSignatureSpan">(message, date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NotBeforeError = function (message, date) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;NotBeforeError&#x27;;
+  this.date = date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.TokenExpiredError" id="apidoc.element.jsonwebtoken.TokenExpiredError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>TokenExpiredError
+        <span class="apidocSignatureSpan">(message, expiredAt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TokenExpiredError = function (message, expiredAt) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;TokenExpiredError&#x27;;
+  this.expiredAt = expiredAt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.decode" id="apidoc.element.jsonwebtoken.decode">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>decode
+        <span class="apidocSignatureSpan">(jwt, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decode = function (jwt, options) {
+  options = options || {};
+  var decoded = jws.decode(jwt, options);
+  if (!decoded) { return null; }
+  var payload = decoded.payload;
+
+  //try parse the payload
+  if(typeof payload === &#x27;string&#x27;) {
+    try {
+      var obj = JSON.parse(payload);
+      if(typeof obj === &#x27;object&#x27;) {
+        payload = obj;
+      }
+    } catch (e) { }
+  }
+
+  //return header if `complete` option is enabled.  header includes claims
+  //such as `kid` and `alg` used to select the key within a JWKS needed to
+  //verify the signature
+  if (options.complete === true) {
+    return {
+      header: decoded.header,
+      payload: payload,
+      signature: decoded.signature
+    };
+  }
+  return payload;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var cert = fs.readFileSync(&#x27;public.pem&#x27;); // get public key
+jwt.verify(token, cert, { algorithms: [&#x27;RS256&#x27;] }, function (err, payload) {
+  // if token alg != RS256,  err == invalid signature
+});
+
+```
+
+### jwt.<span class="apidocCodeKeywordSpan">decode</span>(token [, options])
+
+(Synchronous) Returns the decoded payload without verifying if the signature is valid.
+
+__Warning:__ This will __not__ verify whether the signature is valid. You should __not__ use this for untrusted messages. You mo\
+st likely want to use `jwt.verify` instead.
+
+`token` is the JsonWebToken string
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.sign" id="apidoc.element.jsonwebtoken.sign">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>sign
+        <span class="apidocSignatureSpan">(payload, secretOrPrivateKey, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sign = function (payload, secretOrPrivateKey, options, callback) {
+  options = options || {};
+
+  var isObjectPayload = typeof payload === &#x27;object&#x27; &#x26;&#x26;
+                        !Buffer.isBuffer(payload);
+
+  var header = xtend({
+    alg: options.algorithm || &#x27;HS256&#x27;,
+    typ: isObjectPayload ? &#x27;JWT&#x27; : undefined,
+    kid: options.keyid
+  }, options.header);
+
+  function failure(err) {
+    if (callback) {
+      return callback(err);
+    }
+    throw err;
+  }
+
+
+  if (typeof payload === &#x27;undefined&#x27;) {
+    return failure(new Error(&#x27;payload is required&#x27;));
+  } else if (isObjectPayload) {
+    var payload_validation_result = registered_claims_schema.validate(payload);
+
+    if (payload_validation_result.error) {
+      return failure(payload_validation_result.error);
+    }
+
+    payload = xtend(payload);
+  } else {
+    var invalid_options = options_for_objects.filter(function (opt) {
+      return typeof options[opt] !== &#x27;undefined&#x27;;
+    });
+
+    if (invalid_options.length &#x3e; 0) {
+      return failure(new Error(&#x27;invalid &#x27; + invalid_options.join(&#x27;,&#x27;) + &#x27; option for &#x27; + (typeof payload ) + &#x27; payload&#x27;));
+    }
+  }
+
+  if (typeof payload.exp !== &#x27;undefined&#x27; &#x26;&#x26; typeof options.expiresIn !== &#x27;undefined&#x27;) {
+    return failure(new Error(&#x27;Bad &#x22;options.expiresIn&#x22; option the payload already has an &#x22;exp&#x22; property.&#x27;));
+  }
+
+  if (typeof payload.nbf !== &#x27;undefined&#x27; &#x26;&#x26; typeof options.notBefore !== &#x27;undefined&#x27;) {
+    return failure(new Error(&#x27;Bad &#x22;options.notBefore&#x22; option the payload already has an &#x22;nbf&#x22; property.&#x27;));
+  }
+
+  var validation_result = sign_options_schema.validate(options);
+
+  if (validation_result.error) {
+    return failure(validation_result.error);
+  }
+
+  var timestamp = payload.iat || Math.floor(Date.now() / 1000);
+
+  if (!options.noTimestamp) {
+    payload.iat = timestamp;
+  } else {
+    delete payload.iat;
+  }
+
+  if (typeof options.notBefore !== &#x27;undefined&#x27;) {
+    payload.nbf = timespan(options.notBefore);
+    if (typeof payload.nbf === &#x27;undefined&#x27;) {
+      return failure(new Error(&#x27;&#x22;notBefore&#x22; should be a number of seconds or string representing a timespan eg: &#x22;1d&#x22;, &#x22;20h&#x22;, 60&#x27;\
+));
+    }
+  }
+
+  if (typeof options.expiresIn !== &#x27;undefined&#x27; &#x26;&#x26; typeof payload === &#x27;object&#x27;) {
+    payload.exp = timespan(options.expiresIn, timestamp);
+    if (typeof payload.exp === &#x27;undefined&#x27;) {
+      return failure(new Error(&#x27;&#x22;expiresIn&#x22; should be a number of seconds or string representing a timespan eg: &#x22;1d&#x22;, &#x22;20h&#x22;, 60&#x27;\
+));
+    }
+  }
+
+  Object.keys(options_to_payload).forEach(function (key) {
+    var claim = options_to_payload[key];
+    if (typeof options[key] !== &#x27;undefined&#x27;) {
+      if (typeof payload[claim] !== &#x27;undefined&#x27;) {
+        return failure(new Error(&#x27;Bad &#x22;options.&#x27; + key + &#x27;&#x22; option. The payload already has an &#x22;&#x27; + claim + &#x27;&#x22; property.&#x27;));
+      }
+      payload[claim] = options[key];
+    }
+  });
+
+  var encoding = options.encoding || &#x27;utf8&#x27;;
+
+  if (typeof callback === &#x27;function&#x27;) {
+    callback = callback &#x26;&#x26; once(callback);
+
+    jws.createSign({
+      header: header,
+      privateKey: secretOrPrivateKey,
+      payload: payload,
+      encoding: encoding
+    }).once(&#x27;error&#x27;, callback)
+      .once(&#x27;done&#x27;, function (signature) {
+        callback(null, signature);
+      });
+  } else {
+    return jws.sign({header: header, payload: payload, secret: secretOrPrivateKey, encoding: encoding});
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```bash
+$ npm install jsonwebtoken
+```
+
+# Usage
+
+### jwt.<span class="apidocCodeKeywordSpan">sign</span>(payload, secretOrPrivateKey, options, [callback])
+
+(Asynchronous) If a callback is supplied, callback is called with the `err` or the JWT.
+
+(Synchronous) Returns the JsonWebToken as string
+
+`payload` could be an object literal, buffer or string. *Please note that* `exp` is only set if the payload is an object literal\
+.
+...</pre></li>
+    </ul>
+    
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.verify" id="apidoc.element.jsonwebtoken.verify">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>verify
+        <span class="apidocSignatureSpan">(jwtString, secretOrPublicKey, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">verify = function (jwtString, secretOrPublicKey, options, callback) {
+  if ((typeof options === &#x27;function&#x27;) &#x26;&#x26; !callback) {
+    callback = options;
+    options = {};
+  }
+
+  if (!options) {
+    options = {};
+  }
+
+  //clone this object since we are going to mutate it.
+  options = xtend(options);
+  var done;
+
+  if (callback) {
+    done = function() {
+      var args = Array.prototype.slice.call(arguments, 0);
+      return process.nextTick(function() {
+        callback.apply(null, args);
+      });
+    };
+  } else {
+    done = function(err, data) {
+      if (err) throw err;
+      return data;
+    };
+  }
+
+  if (options.clockTimestamp &#x26;&#x26; typeof options.clockTimestamp !== &#x27;number&#x27;) {
+    return done(new JsonWebTokenError(&#x27;clockTimestamp must be a number&#x27;));
+  }
+
+  var clockTimestamp = options.clockTimestamp || Math.floor(Date.now() / 1000);
+
+  if (!jwtString){
+    return done(new JsonWebTokenError(&#x27;jwt must be provided&#x27;));
+  }
+
+  if (typeof jwtString !== &#x27;string&#x27;) {
+    return done(new JsonWebTokenError(&#x27;jwt must be a string&#x27;));
+  }
+
+  var parts = jwtString.split(&#x27;.&#x27;);
+
+  if (parts.length !== 3){
+    return done(new JsonWebTokenError(&#x27;jwt malformed&#x27;));
+  }
+
+  var hasSignature = parts[2].trim() !== &#x27;&#x27;;
+
+  if (!hasSignature &#x26;&#x26; secretOrPublicKey){
+    return done(new JsonWebTokenError(&#x27;jwt signature is required&#x27;));
+  }
+
+  if (hasSignature &#x26;&#x26; !secretOrPublicKey) {
+    return done(new JsonWebTokenError(&#x27;secret or public key must be provided&#x27;));
+  }
+
+  if (!hasSignature &#x26;&#x26; !options.algorithms) {
+    options.algorithms = [&#x27;none&#x27;];
+  }
+
+  if (!options.algorithms) {
+    options.algorithms = ~secretOrPublicKey.toString().indexOf(&#x27;BEGIN CERTIFICATE&#x27;) ||
+                         ~secretOrPublicKey.toString().indexOf(&#x27;BEGIN PUBLIC KEY&#x27;) ?
+                          [ &#x27;RS256&#x27;,&#x27;RS384&#x27;,&#x27;RS512&#x27;,&#x27;ES256&#x27;,&#x27;ES384&#x27;,&#x27;ES512&#x27; ] :
+                         ~secretOrPublicKey.toString().indexOf(&#x27;BEGIN RSA PUBLIC KEY&#x27;) ?
+                          [ &#x27;RS256&#x27;,&#x27;RS384&#x27;,&#x27;RS512&#x27; ] :
+                          [ &#x27;HS256&#x27;,&#x27;HS384&#x27;,&#x27;HS512&#x27; ];
+
+  }
+
+  var decodedToken;
+  try {
+    decodedToken = jws.decode(jwtString);
+  } catch(err) {
+    return done(err);
+  }
+
+  if (!decodedToken) {
+    return done(new JsonWebTokenError(&#x27;invalid token&#x27;));
+  }
+
+  var header = decodedToken.header;
+
+  if (!~options.algorithms.indexOf(header.alg)) {
+    return done(new JsonWebTokenError(&#x27;invalid algorithm&#x27;));
+  }
+
+  var valid;
+
+  try {
+    valid = jws.verify(jwtString, header.alg, secretOrPublicKey);
+  } catch (e) {
+    return done(e);
+  }
+
+  if (!valid)
+    return done(new JsonWebTokenError(&#x27;invalid signature&#x27;));
+
+  var payload;
+
+  try {
+    payload = decode(jwtString);
+  } catch(err) {
+    return done(err);
+  }
+
+  if (typeof payload.nbf !== &#x27;undefined&#x27; &#x26;&#x26; !options.ignoreNotBefore) {
+    if (typeof payload.nbf !== &#x27;number&#x27;) {
+      return done(new JsonWebTokenError(&#x27;invalid nbf value&#x27;));
+    }
+    if (payload.nbf &#x3e; clockTimestamp + (options.clockTolerance || 0)) {
+      return done(new NotBeforeError(&#x27;jwt not active&#x27;, new Date(payload.nbf * 1000)));
+    }
+  }
+
+  if (typeof payload.exp !== &#x27;undefined&#x27; &#x26;&#x26; !options.ignoreExpiration) {
+    if (typeof payload.exp !== &#x27;number&#x27;) {
+      return done(new JsonWebTokenError(&#x27;invalid exp value&#x27;));
+    }
+    if (clockTimestamp &#x3e;= payload.exp + (options.clockTolerance || 0)) {
+      return done(new TokenExpiredError(&#x27;jwt expired&#x27;, new Date(payload.exp * 1000)));
+    }
+  }
+
+  if (options.audience) {
+    var audiences = Array.isArray(options.audience)? options.audience : [options.audience];
+    var target = Array.isArray(payload.aud) ? payload.aud : [payload.aud];
+
+    var match = target.some(function(aud) { return audiences.indexOf(aud) != -1; });
+
+    if (!match)
+      return done(new JsonWebTokenError(&#x27;jwt audience invalid. expected: &#x27; + audiences.join(&#x27; or &#x27;)));
+  }
+
+  if (options.issuer) {
+    var invalid_issuer =
+        (typeof options.issuer === &#x27;string&#x27; &#x26;&#x26; payload.iss !== options.issuer) ||
+        (Array.isArray(options.issuer) &#x26;&#x26; options.issuer.indexOf(payload.iss) === -1);
+
+    if (invalid_issuer) {
+      return done(new JsonWebTokenError(&#x27;jwt issuer inv ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//or even better:
+
+jwt.sign({
+  data: &#x27;foobar&#x27;
+}, &#x27;secret&#x27;, { expiresIn: &#x27;1h&#x27; });
+```
+
+### jwt.<span class="apidocCodeKeywordSpan">verify</span>(token, secretOrPublicKey, [options, callback])
+
+(Asynchronous) If a callback is supplied, function acts asynchronously. Callback is passed the decoded payload if the signature \
+and optional expiration, audience, or issuer are valid. If not, it will be passed the error.
+
+(Synchronous) If a callback is not supplied, function acts synchronously. Returns the payload decoded if the signature (and, opt\
+ionally, expiration, audience, issuer) are valid. If not, it will throw the error.
+
+`token` is the JsonWebToken string
+...</pre></li>
+    </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.JsonWebTokenError" id="apidoc.module.jsonwebtoken.JsonWebTokenError">module jsonwebtoken.JsonWebTokenError</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.JsonWebTokenError.JsonWebTokenError" id="apidoc.element.jsonwebtoken.JsonWebTokenError.JsonWebTokenError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>JsonWebTokenError
+        <span class="apidocSignatureSpan">(message, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">JsonWebTokenError = function (message, error) {
+  Error.call(this, message);
+  Error.captureStackTrace(this, this.constructor);
+  this.name = &#x27;JsonWebTokenError&#x27;;
+  this.message = message;
+  if (error) this.inner = error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.JsonWebTokenError.prototype" id="apidoc.module.jsonwebtoken.JsonWebTokenError.prototype">module jsonwebtoken.JsonWebTokenError.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.JsonWebTokenError.prototype.constructor" id="apidoc.element.jsonwebtoken.JsonWebTokenError.prototype.constructor">
+        function <span class="apidocSignatureSpan">jsonwebtoken.JsonWebTokenError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (message, error) {
+  Error.call(this, message);
+  Error.captureStackTrace(this, this.constructor);
+  this.name = &#x27;JsonWebTokenError&#x27;;
+  this.message = message;
+  if (error) this.inner = error;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.NotBeforeError" id="apidoc.module.jsonwebtoken.NotBeforeError">module jsonwebtoken.NotBeforeError</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.NotBeforeError.NotBeforeError" id="apidoc.element.jsonwebtoken.NotBeforeError.NotBeforeError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>NotBeforeError
+        <span class="apidocSignatureSpan">(message, date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NotBeforeError = function (message, date) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;NotBeforeError&#x27;;
+  this.date = date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.NotBeforeError.prototype" id="apidoc.module.jsonwebtoken.NotBeforeError.prototype">module jsonwebtoken.NotBeforeError.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.NotBeforeError.prototype.constructor" id="apidoc.element.jsonwebtoken.NotBeforeError.prototype.constructor">
+        function <span class="apidocSignatureSpan">jsonwebtoken.NotBeforeError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (message, date) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;NotBeforeError&#x27;;
+  this.date = date;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.TokenExpiredError" id="apidoc.module.jsonwebtoken.TokenExpiredError">module jsonwebtoken.TokenExpiredError</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.TokenExpiredError.TokenExpiredError" id="apidoc.element.jsonwebtoken.TokenExpiredError.TokenExpiredError">
+        function <span class="apidocSignatureSpan">jsonwebtoken.</span>TokenExpiredError
+        <span class="apidocSignatureSpan">(message, expiredAt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">TokenExpiredError = function (message, expiredAt) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;TokenExpiredError&#x27;;
+  this.expiredAt = expiredAt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.jsonwebtoken.TokenExpiredError.prototype" id="apidoc.module.jsonwebtoken.TokenExpiredError.prototype">module jsonwebtoken.TokenExpiredError.prototype</a></h1>
+    
+    
+    <h2>
+        <a href="#apidoc.element.jsonwebtoken.TokenExpiredError.prototype.constructor" id="apidoc.element.jsonwebtoken.TokenExpiredError.prototype.constructor">
+        function <span class="apidocSignatureSpan">jsonwebtoken.TokenExpiredError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message, expiredAt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (message, expiredAt) {
+  JsonWebTokenError.call(this, message);
+  this.name = &#x27;TokenExpiredError&#x27;;
+  this.expiredAt = expiredAt;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+    
+    
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
