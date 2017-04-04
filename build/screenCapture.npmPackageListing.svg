@@ -1,0 +1,46 @@
+<svg height="686" width="720" xmlns="http://www.w3.org/2000/svg">
+<rect height="686" fill="#555" width="720"></rect>
+<text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
+<tspan x="10" y="26">  0.  2017-04-04 19:13:40 +0000   104353 byte  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-04 19:13:40 +0000    23658 byte  CHANGELOG.md</tspan>
+<tspan x="10" y="58">  2.  2017-04-04 19:13:40 +0000     1121 byte  LICENSE</tspan>
+<tspan x="10" y="74">  3.  2017-04-04 19:13:40 +0000    10500 byte  README.md</tspan>
+<tspan x="10" y="90">  4.  2017-04-04 19:13:40 +0000     1419 byte  bin/changelog</tspan>
+<tspan x="10" y="106">  5.  2017-04-04 19:13:40 +0000      751 byte  decode.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-04 19:13:40 +0000      276 byte  index.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-04 19:13:40 +0000      389 byte  lib/JsonWebTokenError.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-04 19:13:40 +0000      362 byte  lib/NotBeforeError.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-04 19:13:40 +0000      395 byte  lib/TokenExpiredError.js</tspan>
+<tspan x="10" y="186"> 10.  2017-04-04 19:13:40 +0000      412 byte  lib/timespan.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-04 19:13:40 +0000     3168 byte  package.json</tspan>
+<tspan x="10" y="218"> 12.  2017-04-04 19:13:40 +0000     4353 byte  sign.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-04 19:13:40 +0000     2014 byte  test/async_sign.tests.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-04 19:13:40 +0000      325 byte  test/buffer.tests.js</tspan>
+<tspan x="10" y="266"> 15.  2017-04-04 19:13:40 +0000     1054 byte  test/encoding.tests.js</tspan>
+<tspan x="10" y="282"> 16.  2017-04-04 19:13:40 +0000     1984 byte  test/expires_format.tests.js</tspan>
+<tspan x="10" y="298"> 17.  2017-04-04 19:13:40 +0000      653 byte  test/iat.tests.js</tspan>
+<tspan x="10" y="314"> 18.  2017-04-04 19:13:40 +0000     1801 byte  test/invalid_exp.tests.js</tspan>
+<tspan x="10" y="330"> 19.  2017-04-04 19:13:40 +0000     1151 byte  test/invalid_pub.pem</tspan>
+<tspan x="10" y="346"> 20.  2017-04-04 19:13:40 +0000      400 byte  test/issue_147.tests.js</tspan>
+<tspan x="10" y="362"> 21.  2017-04-04 19:13:40 +0000      462 byte  test/issue_196.tests.js</tspan>
+<tspan x="10" y="378"> 22.  2017-04-04 19:13:40 +0000     1110 byte  test/issue_304.tests.js</tspan>
+<tspan x="10" y="394"> 23.  2017-04-04 19:13:40 +0000      433 byte  test/issue_70.tests.js</tspan>
+<tspan x="10" y="410"> 24.  2017-04-04 19:13:40 +0000     3205 byte  test/jwt.hs.tests.js</tspan>
+<tspan x="10" y="426"> 25.  2017-04-04 19:13:40 +0000    13857 byte  test/jwt.rs.tests.js</tspan>
+<tspan x="10" y="442"> 26.  2017-04-04 19:13:40 +0000      304 byte  test/keyid.tests.js</tspan>
+<tspan x="10" y="458"> 27.  2017-04-04 19:13:40 +0000      376 byte  test/noTimestamp.tests.js</tspan>
+<tspan x="10" y="474"> 28.  2017-04-04 19:13:40 +0000     1016 byte  test/non_object_values.tests.js</tspan>
+<tspan x="10" y="490"> 29.  2017-04-04 19:13:40 +0000     1679 byte  test/priv.pem</tspan>
+<tspan x="10" y="506"> 30.  2017-04-04 19:13:40 +0000     1346 byte  test/pub.pem</tspan>
+<tspan x="10" y="522"> 31.  2017-04-04 19:13:40 +0000     1679 byte  test/rsa-private.pem</tspan>
+<tspan x="10" y="538"> 32.  2017-04-04 19:13:40 +0000      426 byte  test/rsa-public-key.pem</tspan>
+<tspan x="10" y="554"> 33.  2017-04-04 19:13:40 +0000      431 byte  test/rsa-public-key.tests.js</tspan>
+<tspan x="10" y="570"> 34.  2017-04-04 19:13:40 +0000      451 byte  test/rsa-public.pem</tspan>
+<tspan x="10" y="586"> 35.  2017-04-04 19:13:40 +0000      577 byte  test/set_headers.tests.js</tspan>
+<tspan x="10" y="602"> 36.  2017-04-04 19:13:40 +0000      701 byte  test/undefined_secretOrPublickey.tests.js</tspan>
+<tspan x="10" y="618"> 37.  2017-04-04 19:13:40 +0000      593 byte  test/util/fakeDate.js</tspan>
+<tspan x="10" y="634"> 38.  2017-04-04 19:13:40 +0000    12542 byte  test/verify.tests.js</tspan>
+<tspan x="10" y="650"> 39.  2017-04-04 19:13:40 +0000     1423 byte  test/wrong_alg.tests.js</tspan>
+<tspan x="10" y="666"> 40.  2017-04-04 19:13:40 +0000     5556 byte  verify.js</tspan>
+</text>
+</svg>
