@@ -1,6 +1,6 @@
 # npmdoc-jsonwebtoken
 
-#### api documentation for  [jsonwebtoken (v7.3.0)](https://github.com/auth0/node-jsonwebtoken#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jsonwebtoken.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jsonwebtoken) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jsonwebtoken.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jsonwebtoken)
+#### basic api documentation for  [jsonwebtoken (v7.4.0)](https://github.com/auth0/node-jsonwebtoken#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-jsonwebtoken.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-jsonwebtoken) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-jsonwebtoken.svg)](https://travis-ci.org/npmdoc/node-npmdoc-jsonwebtoken)
 
 #### JSON Web Token implementation (symmetric and asymmetric)
 
@@ -45,14 +45,14 @@
     },
     "directories": {},
     "dist": {
-        "shasum": "85118d6a70e3fccdf14389f4e7a1c3f9c8a9fbba",
-        "tarball": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-7.3.0.tgz"
+        "shasum": "515bf2bba070ec615bad97fd2e945027eb476946",
+        "tarball": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-7.4.0.tgz"
     },
     "engines": {
         "node": ">=0.12",
         "npm": ">=1.4.28"
     },
-    "gitHead": "94007b3e17accb8f0d74f94c2926fdc8924f82b6",
+    "gitHead": "b0e443c9b6c81f40c830349aa2bafb6191281de3",
     "homepage": "https://github.com/auth0/node-jsonwebtoken#readme",
     "keywords": [
         "jwt"
@@ -94,7 +94,8 @@
     "scripts": {
         "test": "mocha --require test/util/fakeDate && nsp check"
     },
-    "version": "7.3.0"
+    "version": "7.4.0",
+    "bin": {}
 }
 ```
 
