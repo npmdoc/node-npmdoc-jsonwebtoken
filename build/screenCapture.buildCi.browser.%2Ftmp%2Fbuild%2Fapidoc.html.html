@@ -47,7 +47,7 @@
 }
 </style>
 <h1>api documentation for
-    <a href="https://github.com/auth0/node-jsonwebtoken#readme">jsonwebtoken (v7.3.0)</a>
+    <a href="https://github.com/auth0/node-jsonwebtoken#readme">jsonwebtoken (v7.4.0)</a>
 </h1>
 <h4>JSON Web Token implementation (symmetric and asymmetric)</h4>
 <div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
@@ -301,21 +301,21 @@
   return payload;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var cert = fs.readFileSync('public.pem'); // get public key
-jwt.verify(token, cert, { algorithms: ['RS256'] }, function (err, payload) {
-  // if token alg != RS256,  err == invalid signature
-});
 
-```
 
-### jwt.<span class="apidocCodeKeywordSpan">decode</span>(token [, options])
 
-(Synchronous) Returns the decoded payload without verifying if the signature is valid.
+var jws = require('jws');
 
-__Warning:__ This will __not__ verify whether the signature is valid. You should __not__ use this for untrusted messages. You most
- likely want to use `jwt.verify` instead.
+module.exports = function (jwt, options) {
+options = options || {};
+var decoded = jws.<span class="apidocCodeKeywordSpan">decode</span>(jwt, options);
+if (!decoded) { return null; }
+var payload = decoded.payload;
 
-`token` is the JsonWebToken string
+//try parse the payload
+if(typeof payload === 'string') {
+  try {
+    var obj = JSON.parse(payload);
 ...</pre></li>
     </ul>
 
@@ -329,7 +329,12 @@ __Warning:__ This will __not__ verify whether the signature is valid. You should
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sign = function (payload, secretOrPrivateKey, options, callback) {
-  options = options || {};
+  if (typeof options === 'function') {
+    callback = options;
+    options = {};
+  } else {
+    options = options || {};
+  }
 
   var isObjectPayload = typeof payload === 'object' &amp;&amp;
                         !Buffer.isBuffer(payload);
@@ -440,7 +445,7 @@ $ npm install jsonwebtoken
 
 # Usage
 
-### jwt.<span class="apidocCodeKeywordSpan">sign</span>(payload, secretOrPrivateKey, options, [callback])
+### jwt.<span class="apidocCodeKeywordSpan">sign</span>(payload, secretOrPrivateKey, [options, callback])
 
 (Asynchronous) If a callback is supplied, callback is called with the `err` or the JWT.
 
@@ -604,22 +609,25 @@ $ npm install jsonwebtoken
     if (invalid_issuer) {
       return done(new JsonWebTokenError('jwt issuer inv ...</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-//or even better:
+ https://github.com/auth0/node-jsonwebtoken/commit/24a370080e0b75f11d4717cd2b11b2949d95fc2e
+ https://github.com/auth0/node-jsonwebtoken/commit/a77df6d49d4ec688dfd0a1cc723586bffe753516
 
-jwt.sign({
-  data: 'foobar'
-}, 'secret', { expiresIn: '1h' });
+### Security
+
+- [verify] Update to jws@^3.0.0 and renaming `header.alg` mismatch exception to `invalid algorithm` and adding more mismatch tests
+.
+
+ As `jws@3.0.0` changed the verify method signature to be `jws.<span class="apidocCodeKeywordSpan">verify</span>(signature, algorithm
+, secretOrKey)`, the token header must be decoded first in order to make sure that the `alg` field matches one of the allowed `options
+.algorithms`. After that, the now validated `header.alg` is passed to `jws.verify`
+
+As the order of steps has changed, the error that was thrown when the JWT was invalid is no longer the `jws` one:
+```
+{ [Error: Invalid token: no header in signature 'a.b.c'] code: 'MISSING_HEADER', signature: 'a.b.c'
+; }
 ```
 
-### jwt.<span class="apidocCodeKeywordSpan">verify</span>(token, secretOrPublicKey, [options, callback])
-
-(Asynchronous) If a callback is supplied, function acts asynchronously. Callback is passed the decoded payload if the signature
-and optional expiration, audience, or issuer are valid. If not, it will be passed the error.
-
-(Synchronous) If a callback is not supplied, function acts synchronously. Returns the payload decoded if the signature (and, optionally
-, expiration, audience, issuer) are valid. If not, it will throw the error.
-
-`token` is the JsonWebToken string
+That old error (removed from jws) has been replaced by a `JsonWebTokenError` with message `invalid token`.
 ...</pre></li>
     </ul>
 
